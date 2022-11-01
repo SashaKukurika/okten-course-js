@@ -44,6 +44,6 @@ console.log(typeof c);
 
 let name = prompt('Як тебе звати?');
 let secondname = prompt('Яка у тебе фамілія?');
-let age = prompt('Скільки тобі років?');
+let age = parseInt(prompt('Скільки тобі років?'));
 
 alert(`Тебе звати ${name}, твоя фамілія ${secondname} і тобі ${age} років!`);
