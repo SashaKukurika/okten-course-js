@@ -1,16 +1,27 @@
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
-let arr1 = ['cool', true, false, 58, 'css', -25, 89, 'left', 'right', 11235];
-console.log(arr1[0]);
-console.log(arr1[1]);
-console.log(arr1[2]);
-console.log(arr1[3]);
-console.log(arr1[4]);
-console.log(arr1[5]);
-console.log(arr1[6]);
-console.log(arr1[7]);
-console.log(arr1[8]);
-console.log(arr1[9]);
+// let arr1 = [true, false, 58, 'css', -25, 89, 'left', 'right', 11235];
+let arr;
+arr = ['cool'];
+arr[1] = true;
+arr[2] = false;
+arr[3] = 58;
+arr[4] = 'css';
+arr[5] = -25;
+arr[6] = 89;
+arr[7] = 'left';
+arr[8] = 'right';
+arr[9] = 11235;
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+console.log(arr[3]);
+console.log(arr[4]);
+console.log(arr[5]);
+console.log(arr[6]);
+console.log(arr[7]);
+console.log(arr[8]);
+console.log(arr[9]);
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
@@ -37,19 +48,19 @@ let object1 = {
     title: 'The Churchill factor',
     pageCount: 62,
     genre: 'Biography',
-    authors: [{name: 'Boris'},{age: 58}]
+    authors: [{name: 'Boris', age: 58}]
 }
 let object2 = {
     title: 'Surgeon',
     pageCount: 105,
     genre: 'Thriller',
-    authors: [{name: 'Tess'},{age: 69}]
+    authors: [{name: 'Tess', age: 69}]
 }
 let object3 = {
     title: 'Angels and demons',
     pageCount: 321,
     genre: 'Detective',
-    authors: [{name: 'Dan'},{age: 58}]
+    authors: [{name: 'Dan', age: 58}]
 }
 
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password.
