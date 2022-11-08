@@ -70,6 +70,8 @@ switch (weekDay) {
     case 7:
         console.log('Sunday');
         break;
+    default:
+        console.log('There are only 7 days in a week')
 }
 
 
