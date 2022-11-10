@@ -47,3 +47,6 @@ let secondname = prompt('Яка у тебе фамілія?');
 let age = parseInt(prompt('Скільки тобі років?'));
 
 alert(`Тебе звати ${name}, твоя фамілія ${secondname} і тобі ${age} років!`);
+
+
+

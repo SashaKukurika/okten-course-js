@@ -12,18 +12,18 @@ for (i = 0; i < 10; i++) {
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 
-let i = 0;
-while (i < 20) {
+let i2 = 0;
+while (i2 < 20) {
     document.write(`<h1>Some text</h1>`);
-    i++;
+    i2++;
 }
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 
-let i2 = 0;
-while (i2 < 20) {
+let i3 = 0;
+while (i3 < 20) {
     document.write(`<h1>Some text ${i2}</h1>`);
-    i2++;
+    i3++;
 }
 
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -113,32 +113,23 @@ let users = [
 // за допомоги циклу вивести:
 // - користувачів зі статусом true
 
-let i3 = 0;
-while (i3 < users.length) {
-    let user = users[i3];
+for (const user of users) {
     if (user.status) {
-        console.log(user);
+        document.write(`<h5>${user.name} ${user.age} ${user.status}</h5>`);
     }
-    i3++;
 }
 
 // - користувачів зі статусом false
 
-let i4 = 0;
-while (i4 < users.length) {
-    let user = users[i4];
+for (const user of users) {
     if (!user.status) {
-        console.log(user);
+        document.write(`<h5>${user.name} ${user.age} ${user.status}</h5>`);
     }
-    i4++;
 }
 // - користувачів які старші за 30 років
 
-let i5 = 0;
-while (i5 < users.length) {
-    let user = users[i5];
+for (const user of users) {
     if (user.age > 30) {
-        console.log(user);
+        document.write(`<h5>${user.name} ${user.age} ${user.status}</h5>`);
     }
-    i5++;
 }
