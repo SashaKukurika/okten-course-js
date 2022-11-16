@@ -259,28 +259,72 @@ for (i = 0; i < 100; i++) {
 
 let bookArr = [{
     title: 'The Churchill factor',
-    pageCount: 62,
-    genre: 'Biography',
-    authors: 'Boris'
-},
-{
-    title: 'Surgeon',
-    pageCount: 105,
-    genre: ['Thriller', 'Detective'],
-    authors: 'Tess'
-},
-{
-    title: 'Angels and demons',
-    pageCount: 321,
-    genre: 'Detective',
-    authors: ['Dan', 'Alex']
-}
-]
+    pageCount: 6222,
+    genre: ['Biography'],
+    authors: ['Boris']
+    },
+    {
+        title: 'Surgeon',
+        pageCount: 105,
+        genre: ['Thriller', 'Detective'],
+        authors: ['Tess']
+    },
+    {
+        title: 'Angels and demons',
+        pageCount: 321,
+        genre: ['Detective'],
+        authors: ['Dan', 'Alex']
+    },
+    {
+        title: 'Angels',
+        pageCount: 3241,
+        genre: ['Detective', 'Drama', 'Comedy'],
+        authors: ['Dan', 'Alex', 'Brony']
+    }
+];
 // -знайти наібльшу книжку.
 
-
+let biggestBook = bookArr[0];
+for (i = 1; i < bookArr.length; i++) {
+    if (biggestBook.pageCount < bookArr[i].pageCount) {
+        biggestBook = bookArr[i];
+    }
+}
+console.log(biggestBook);
 
 // - знайти книжку/ки з найбільшою кількістю жанрів
+
+let biggestBookGenre = bookArr[0];
+for (i = 1; i < bookArr.length; i++) {
+    if (biggestBookGenre.genre.length < bookArr[i].genre.length) {
+        biggestBookGenre = bookArr[i];
+    }
+}
+console.log(biggestBookGenre);
+
 // - знайти книжку/ки з найдовшою назвою
+
+let longestNameOfBook = bookArr[0];
+for (i = 1; i < bookArr.length; i++) {
+    if (longestNameOfBook.title.length < bookArr[i].title.length) {
+        longestNameOfBook = bookArr[i];
+    }
+}
+console.log(longestNameOfBook);
+
 // - знайти книжку/ки які писали 2 автори
+
+for (const bookArrElement of bookArr) {
+    if (bookArrElement.authors.length === 2){
+        console.log(bookArrElement);
+    }
+}
+
 // - знайти книжку/ки які писав 1 автор
+
+for (const bookArritem of bookArr) {
+    if (bookArritem.authors.length === 1){
+        console.log(bookArritem);
+    }
+
+}
