@@ -1,17 +1,14 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
 let areaOfRectangle = (a, b) => a * b;
-console.log(areaOfRectangle(5, 10));
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
 let areaOfCircle = (r) => 3.14 * r ** 2;
-console.log(areaOfCircle(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 
 let areaOfCylinder = (r, h) => 6.28 * (r ** 2 + r * h);
-console.log(areaOfCylinder(2, 5));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 
@@ -27,8 +24,6 @@ function writeParagraf(arguments) {
     return document.write(`<p>${arguments}</p>`);
 }
 
-writeParagraf('sdfds')
-
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 
 function createUlWith3Li(textInLi) {
@@ -41,8 +36,6 @@ function createUlWith3Li(textInLi) {
 `)
 }
 
-createUlWith3Li('some text');
-
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
 function createUlWithLi(textInLi, numberOfLi) {
@@ -53,11 +46,7 @@ function createUlWithLi(textInLi, numberOfLi) {
     document.write(`</ul>`);
 }
 
-createUlWithLi('text', 5);
-
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-
-let users = [1, 2, 3, 'dhd0', true];
 
 function listFromArray(arrayName) {
     document.write(`<ol>`);
@@ -67,21 +56,8 @@ function listFromArray(arrayName) {
     document.write(`</ol>`);
 }
 
-listFromArray(users);
-
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
 // Для кожного об'єкту окремий блок.
-
-let somearr = [
-    {id: 15,
-    name: 'sasha',
-    age: 25
-    },
-    {id: 5,
-        name: 'saa',
-        age: 5
-    },
-]
 
 function createBlockFromArray(arrayName) {
     for (const arrayNameElement of arrayName) {
@@ -89,15 +65,24 @@ function createBlockFromArray(arrayName) {
     }
 }
 
-createBlockFromArray(somearr);
 // - створити функцію яка повертає найменьше число з масиву
 
-let arrWithNumber = [1, 2, 3, 88, 120, 33];
-
 function lowestNumberInArray(arrayName) {
-    for (const arrayNameElement of arrayName) {
-
+    let min = arrayName[0];
+    for (i = 1; i < arrayName.length; i++) {
+        if (arrayName[i] < min) {
+            min = arrayName[i];
+        }
     }
+    return min;
 }
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+
+function sumOfArray(arrayName) {
+    let summ = 0;
+    for (i = 0; i < arrayName.length; i++) {
+        summ = summ + arrayName[i];
+    }
+    return summ;
+}
