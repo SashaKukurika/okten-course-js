@@ -134,9 +134,20 @@ let citiesWithId = [
 //             // TO BE CONTINUED .....
 //         ]
 //
-//
-//
-//
+
+for (let i = 0; i < usersWithId.length; i++) {
+    if (usersWithId[i].id === citiesWithId[0].user_id){
+        usersWithId[i].address = citiesWithId[0];
+    } else if (usersWithId[i].id === citiesWithId[1].user_id){
+        usersWithId[i].address = citiesWithId[1];
+    } else if (usersWithId[i].id === citiesWithId[2].user_id){
+        usersWithId[i].address = citiesWithId[2];
+    } else if (usersWithId[i].id === citiesWithId[3].user_id){
+        usersWithId[i].address = citiesWithId[3];
+    }
+}
+console.log(usersWithId);
+
 // - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 let arr8 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (i = 0; i < arr8.length; i++) {
