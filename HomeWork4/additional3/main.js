@@ -57,13 +57,15 @@ for (let i = 0; i < array.length; i += 3) {
 
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
-// debugger;
-// let newArray2 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
-// for (let i = newArray2.length - 1; i >= 0; i--) {
-//     if (newArray2[i] % 2 === 0) {
-//
-//     }
-// }
+debugger;
+let newArray2 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
+for (let i = 0; i < newArray2.length; i++) {
+    let n = i - 1;
+    if (newArray2[i]%2 === 0) {
+        console.log(newArray2[n]);
+    }
+
+}
 
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 
@@ -136,16 +138,13 @@ let citiesWithId = [
 //
 
 for (let i = 0; i < usersWithId.length; i++) {
-    if (usersWithId[i].id === citiesWithId[0].user_id){
-        usersWithId[i].address = citiesWithId[0];
-    } else if (usersWithId[i].id === citiesWithId[1].user_id){
-        usersWithId[i].address = citiesWithId[1];
-    } else if (usersWithId[i].id === citiesWithId[2].user_id){
-        usersWithId[i].address = citiesWithId[2];
-    } else if (usersWithId[i].id === citiesWithId[3].user_id){
-        usersWithId[i].address = citiesWithId[3];
+    for (let n=0; n< citiesWithId.length; n++) {
+        if (usersWithId[i].id === citiesWithId[n].user_id) {
+            usersWithId[i].address = citiesWithId[n];
+        }
     }
 }
+
 console.log(usersWithId);
 
 // - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
