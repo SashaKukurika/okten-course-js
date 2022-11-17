@@ -61,7 +61,7 @@ debugger;
 let newArray2 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
 for (let i = 0; i < newArray2.length; i++) {
     let n = i - 1;
-    if (newArray2[i]%2 === 0) {
+    if (newArray2[i] % 2 === 0) {
         console.log(newArray2[n]);
     }
 
@@ -70,7 +70,7 @@ for (let i = 0; i < newArray2.length; i++) {
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 
 let arr3 = [100, 250, 50, 168, 120, 345, 188];
-sum = 0;
+let sum = 0;
 for (let i = 0; i < arr3.length; i++) {
     const arr3Element = arr3[i];
     sum += arr3Element;
@@ -138,7 +138,7 @@ let citiesWithId = [
 //
 
 for (let i = 0; i < usersWithId.length; i++) {
-    for (let n=0; n< citiesWithId.length; n++) {
+    for (let n = 0; n < citiesWithId.length; n++) {
         if (usersWithId[i].id === citiesWithId[n].user_id) {
             usersWithId[i].address = citiesWithId[n];
         }
