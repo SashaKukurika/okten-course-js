@@ -57,7 +57,7 @@ for (let i = 0; i < array.length; i += 3) {
 
 // 5. Вивести кожен елемент масиву, сусід справа якого є парним
 // EXAMPLE: [ 1, 2, 3, 5, 7, 9, 56, 8, 67 ] -> Має бути виведено 1, 9, 56
-debugger;
+
 let newArray2 = [1, 2, 3, 5, 7, 9, 56, 8, 67];
 for (let i = 0; i < newArray2.length; i++) {
     let n = i - 1;
