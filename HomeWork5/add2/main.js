@@ -126,31 +126,28 @@ console.log(arr2);
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
 
-// 1 6 0 3
+const arr3 = [0, 1, 2, 3, 4];
+const arr4 = [0, 0, 1, 0];
+const arr5 = [1, 0, 6, 0, 3];
 
-const arr3 = [0,1,2,3,4];
-const zeroFoo = (arrName) => {
-    for (let i = 0; i < arrName.length; i++) {
-        let memory = 0;
-        if (arrName[i] === 0) {
-            let j = i;
-            memory = arrName[++j]
-            arrName[i] = arrName[++j];
-            arrName.splice(i, 1);
-            arrName[arrName.length] = 0;
+function zeroFoo(arrayName) {
+    const newArray = [];
+    let zeroNum = 0;
+    let index = 0;
+    for (let i = 0; i < arrayName.length; i++) {
+        if (arrayName[i]) {
+            newArray[index++] = arrayName[i];
+        } else {
+            zeroNum++;
         }
     }
-    return arrName;
+    const num = newArray.length;
+    for (let i = num; i < num + zeroNum; i++) {
+        newArray[i] = 0;
+    }
+    return newArray;
 }
-let i = 1;
-let j = i;
-arr3[i] = arr3[++j];
-arr3.splice(i, 1);
-arr3[arr3.length] = 0;
-console.log(arr3);
-
-
-
 
 console.log(zeroFoo(arr3));
-
+console.log(zeroFoo(arr4));
+console.log(zeroFoo(arr5));
