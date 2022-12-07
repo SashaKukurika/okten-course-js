@@ -3,7 +3,7 @@
 
 const cutString = (string, num) => {
     let str = '';
-    for (let i = 0; i < string.length; i += 3) {
+    for (let i = 0; i < string.length; i += num) {
         str += `${string.slice(i, num)},`;
         num += 3;
     }
@@ -99,12 +99,10 @@ console.log(capitalize(str4));
 // Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
 
 const validEmail = (emailAddress) => {
-    if (emailAddress.indexOf('@') > 0) {
-        if (emailAddress.lastIndexOf('.') > emailAddress.indexOf('@') + 2) {
-            return console.log('It is good email');
-        } else {
-            return console.log('It is bad email');
-        }
+    if (emailAddress.indexOf('@') > 0 && emailAddress.lastIndexOf('.') > emailAddress.indexOf('@') + 2) {
+        return console.log('It is good email');
+    } else {
+        return console.log('It is bad email');
     }
 }
 validEmail('someemail@gmail.com');
