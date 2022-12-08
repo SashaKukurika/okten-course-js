@@ -205,7 +205,12 @@ let coursesAndDurationArray = [
 // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
 // Завдання робити через цикли.
 
-
+// for (const element of coursesAndDurationArray) {
+//     let div = document.createElement('div');
+//     div.innerHTML = `${element.title} - ${element.monthDuration}`;
+//     document.body.appendChild(div);
+//
+// }
 
 // - Є масив
 // let coursesAndDurationArray = [
@@ -218,19 +223,66 @@ let coursesAndDurationArray = [
 // ];
 //
 //
-// За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
+// За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
+// в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
 //     Завдання робити через цикли.
+
+// for (const element of coursesAndDurationArray) {
+//     let div = document.createElement('div');
+//     div.classList.add('item');
+//     let h1 = document.createElement('h1');
+//     h1.innerHTML = `${element.title}`;
+//     h1.classList.add('heading');
+//     let p = document.createElement('p');
+//     p.innerHTML = `${element.monthDuration}`;
+//     p.classList.add('heading');
+//     div.append(h1, p);
 //
+//     document.body.appendChild(div);
 //
-//
+// }
+
 // -----------
 //
-//     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
-//
-//
-//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
-//
+//     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку
+//     зникав елемент з id="text".
+
+// let div = document.createElement('div');
+// // div.id = 'text';
+// // div.style.background = 'silver';
+// // div.style.height = '200px';
+// // div.style.width = '200px';
+// // document.body.appendChild(div);
+// // let button = document.createElement('button');
+// // document.body.appendChild(button);
+// // button.style.width = '100px';
+// // button.style.height = '50px';
+// // button.onclick = function (e) {
+// //     document.querySelector('#text').remove();
+// // }
+
+//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
+//     інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
+let form = document.createElement('form');
+let input = document.createElement("input");
+input.type = 'number';
+input.id = 'age';
+let inputButton = document.createElement("input");
+inputButton.type = 'submit';
+document.body.appendChild(form);
+form.append(input,inputButton);
+inputButton.onclick = function () {
+    const val = document.getElementById('age').value;
+    if (val>=18){
+        alert('Go');
+    } else if (val<18){
+        alert('stop');
+    } else if (val<=0 && val>121){
+        alert('Error');
+    }
+}
+
 // *** Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
