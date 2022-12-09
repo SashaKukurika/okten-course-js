@@ -39,15 +39,15 @@ let simpsons = [
 // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 // Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 
-// for (const simpson of simpsons) {
-//     let divElement = document.createElement('div');
-//     divElement.classList.add('member');
-//     divElement.innerHTML = `<h2>${simpson.name} ${simpson.surname} | age: ${simpson.age}</h2>
-//                             <p>${simpson.info}</p>
-//                             <img src="${simpson.photo}" alt="${simpson.name} ${simpson.surname}">`
-//     document.body.append(divElement);
-//
-// }
+for (const simpson of simpsons) {
+    let divElement = document.createElement('div');
+    divElement.classList.add('member');
+    divElement.innerHTML = `<h2>${simpson.name} ${simpson.surname} | age: ${simpson.age}</h2>
+                            <p>${simpson.info}</p>
+                            <img src="${simpson.photo}" alt="${simpson.name} ${simpson.surname}">`
+    document.body.append(divElement);
+
+}
 
 // Цикл в циклі
 // - Є масив
@@ -126,40 +126,40 @@ let coursesArray = [
 // Приклад структири знаходиться у файлі example.png
 // ------------------
 
-// for (const coursesArrayElement of coursesArray) {
-//     let div = document.createElement('div');
-//     document.body.append(div);
-//     div.classList.add('wrap');
-//
-//     for (const inner in coursesArrayElement) {
-//         let innerDiv = document.createElement('div');
-//         div.append(innerDiv);
-//
-//         if (inner === 'modules') {
-//             let ul = document.createElement('ul');
-//             innerDiv.append(ul);
-//             ul.classList.add('ulList')
-//             innerDiv.classList.add('modules');
-//
-//             for (i = 0; i < coursesArrayElement.modules.length; i++) {
-//                 let element = document.createElement('li');
-//                 ul.append(element);
-//                 element.innerHTML = `${coursesArrayElement[inner][i]}`;
-//                 element.classList.add('li');
-//             }
-//         } else if (inner === 'title') {
-//             innerDiv.innerHTML = `${coursesArrayElement[inner]}`
-//             innerDiv.classList.add('title');
-//         } else if (inner === 'monthDuration') {
-//             innerDiv.innerHTML = `${coursesArrayElement[inner]}`
-//             innerDiv.classList.add('monthDuration');
-//         } else if (inner === 'hourDuration') {
-//             innerDiv.innerHTML = `${coursesArrayElement[inner]}`
-//             innerDiv.classList.add('hourDuration');
-//         }
-//
-//     }
-// }
+for (const coursesArrayElement of coursesArray) {
+    let div = document.createElement('div');
+    document.body.append(div);
+    div.classList.add('wrap');
+
+    for (const inner in coursesArrayElement) {
+        let innerDiv = document.createElement('div');
+        div.append(innerDiv);
+
+        if (inner === 'modules') {
+            let ul = document.createElement('ul');
+            innerDiv.append(ul);
+            ul.classList.add('ulList')
+            innerDiv.classList.add('modules');
+
+            for (i = 0; i < coursesArrayElement.modules.length; i++) {
+                let element = document.createElement('li');
+                ul.append(element);
+                element.innerHTML = `${coursesArrayElement[inner][i]}`;
+                element.classList.add('li');
+            }
+        } else if (inner === 'title') {
+            innerDiv.innerHTML = `${coursesArrayElement[inner]}`
+            innerDiv.classList.add('title');
+        } else if (inner === 'monthDuration') {
+            innerDiv.innerHTML = `${coursesArrayElement[inner]}`
+            innerDiv.classList.add('monthDuration');
+        } else if (inner === 'hourDuration') {
+            innerDiv.innerHTML = `${coursesArrayElement[inner]}`
+            innerDiv.classList.add('hourDuration');
+        }
+
+    }
+}
 
 
 //     - створити блок,
@@ -168,15 +168,15 @@ let coursesArray = [
 // - додати цей блок в body.
 // - клонувати його повністю, та додати клон в body.
 
-// let div = document.createElement('div');
-// div.classList.add('wrap', 'collapse', 'alpha', 'beta');
-// div.innerText = 'Some text';
-// div.style.background = 'silver';
-// div.style.color = 'gold';
-// div.style.fontSize = 'large';
-// document.body.appendChild(div);
-// let copyDiv = div.cloneNode(true);
-// document.body.appendChild(copyDiv);
+let div = document.createElement('div');
+div.classList.add('wrap', 'collapse', 'alpha', 'beta');
+div.innerText = 'Some text';
+div.style.background = 'silver';
+div.style.color = 'gold';
+div.style.fontSize = 'large';
+document.body.appendChild(div);
+let copyDiv = div.cloneNode(true);
+document.body.appendChild(copyDiv);
 
 
 // - Є масив:
@@ -185,13 +185,13 @@ const arr = ['Main', 'Products', 'About us', 'Contacts'];
 // та додає його до блоку .menu
 // Завдання робити через цикли.
 
-// let ul = document.querySelector('.menu');
-// for (const element of arr) {
-//     let li = document.createElement('li');
-//     ul.appendChild(li);
-//     li.innerHTML = `${element}`;
-//
-// }
+let ul = document.querySelector('.menu');
+for (const element of arr) {
+    let li = document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML = `${element}`;
+
+}
 
 // - Є масив
 let coursesAndDurationArray = [
@@ -205,12 +205,12 @@ let coursesAndDurationArray = [
 // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
 // Завдання робити через цикли.
 
-// for (const element of coursesAndDurationArray) {
-//     let div = document.createElement('div');
-//     div.innerHTML = `${element.title} - ${element.monthDuration}`;
-//     document.body.appendChild(div);
-//
-// }
+for (const element of coursesAndDurationArray) {
+    let div = document.createElement('div');
+    div.innerHTML = `${element.title} - ${element.monthDuration}`;
+    document.body.appendChild(div);
+
+}
 
 // - Є масив
 // let coursesAndDurationArray = [
@@ -227,39 +227,40 @@ let coursesAndDurationArray = [
 // в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
 //     Завдання робити через цикли.
 
-// for (const element of coursesAndDurationArray) {
-//     let div = document.createElement('div');
-//     div.classList.add('item');
-//     let h1 = document.createElement('h1');
-//     h1.innerHTML = `${element.title}`;
-//     h1.classList.add('heading');
-//     let p = document.createElement('p');
-//     p.innerHTML = `${element.monthDuration}`;
-//     p.classList.add('heading');
-//     div.append(h1, p);
-//
-//     document.body.appendChild(div);
-//
-// }
+for (const element of coursesAndDurationArray) {
+    let div = document.createElement('div');
+    div.classList.add('item');
+    let h1 = document.createElement('h1');
+    h1.innerHTML = `${element.title}`;
+    h1.classList.add('heading');
+    let p = document.createElement('p');
+    p.innerHTML = `${element.monthDuration}`;
+    p.classList.add('heading');
+    div.append(h1, p);
+
+    document.body.appendChild(div);
+
+}
 
 // -----------
 //
 //     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку
 //     зникав елемент з id="text".
 
-// let div = document.createElement('div');
-// // div.id = 'text';
-// // div.style.background = 'silver';
-// // div.style.height = '200px';
-// // div.style.width = '200px';
-// // document.body.appendChild(div);
-// // let button = document.createElement('button');
-// // document.body.appendChild(button);
-// // button.style.width = '100px';
-// // button.style.height = '50px';
-// // button.onclick = function (e) {
-// //     document.querySelector('#text').remove();
-// // }
+let div2 = document.createElement('div');
+div2.id = 'text';
+div2.style.background = 'silver';
+div2.style.height = '200px';
+div2.style.width = '200px';
+document.body.appendChild(div2);
+let button = document.createElement('button');
+document.body.appendChild(button);
+button.style.width = '100px';
+button.style.height = '50px';
+button.innerText = 'Click to disappear';
+button.onclick = function () {
+    document.querySelector('#text').remove();
+}
 
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
 //     інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
@@ -286,3 +287,41 @@ inputButton.onclick = function () {
 // *** Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+
+let inputElement1 = document.createElement('input');
+let inputElement2 = document.createElement('input');
+let inputElement3 = document.createElement('input');
+let buttonElement = document.createElement('button');
+inputElement1.type = 'number';
+inputElement2.type = 'number';
+inputElement3.type = 'text';
+buttonElement.innerText = 'click';
+document.body.append(inputElement1, inputElement2, inputElement3, buttonElement);
+
+buttonElement.onclick = () => {
+    let tr = inputElement1.value;
+    let td = inputElement2.value;
+    let text = inputElement3.value;
+    let table = document.createElement('table');
+    table.style.border = '1px solid silver';
+    document.body.append(table);
+
+    const createTable = (tr, td, text) => {
+
+        for (let i = 0; i < tr; i++) {
+            let rowElement = document.createElement('tr');
+            table.append(rowElement);
+
+            for (let j = 0; j < td; j++) {
+                let cellElement = document.createElement('td');
+                rowElement.append(cellElement);
+                cellElement.innerHTML = `${text}`;
+                cellElement.style.border = '1px solid silver';
+
+            }
+
+        }
+    }
+
+    createTable(tr, td, text);
+}
