@@ -72,7 +72,6 @@ class UserAccount {
             return console.error('To many cards');
         } else {
             this.cards.push(userCard(this.cards.length - 1));
-            console.log(this.cards.length - 1);
         }
     }
 
