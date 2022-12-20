@@ -1,0 +1,43 @@
+/*//     post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/*//     Всі елементи котрі характеризують users, posts, comments візуалізувати, так, */
+/*//     щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+.wrap {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.postDiv {
+    width: 90%;
+    background: #dce7f5;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.commentDiv {
+    width: 90%;
+    background: #dce7f5;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.commentDiv > h3 {
+    text-align: justify;
+    width: 24%;
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0.5%;
+    padding: 1%;
+}

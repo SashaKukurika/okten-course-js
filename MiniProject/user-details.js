@@ -6,23 +6,28 @@
 // котра має детальну інфу про поточний пост.
 
 let apiURL = 'https://jsonplaceholder.typicode.com/users/';
-
 let url = new URL(location.href);
 let id = url.searchParams.get('id');
 
 fetch(apiURL + id).then(value => value.json()).then(user => {
 
     let button = document.createElement('button');
+    button.classList.add('mainButton');
     button.innerText = 'Post of current user';
     button.onclick = function () {
+
         let posts = 'https://jsonplaceholder.typicode.com/users/' + id + '/posts';
 
         fetch(posts).then(value => value.json()).then(posts => {
-            console.log(posts);
+
             let div = document.createElement('div');
+            div.classList.add('posts');
 
             for (const post of posts) {
-                div.innerHTML += `<h3>${post.title}</h3>`
+
+                let postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerHTML += `<h3>${post.title}</h3>`
 
                 let buttonUrl = document.createElement('button');
 
@@ -31,7 +36,8 @@ fetch(apiURL + id).then(value => value.json()).then(user => {
                 a.innerText = `Post details`;
 
                 buttonUrl.appendChild(a);
-                div.appendChild(buttonUrl);
+                postDiv.appendChild(buttonUrl);
+                div.appendChild(postDiv);
             }
 
             document.body.appendChild(div);
@@ -39,18 +45,13 @@ fetch(apiURL + id).then(value => value.json()).then(user => {
         })
     }
 
-
-    document.body.appendChild(button);
-
-
     let div = document.createElement('div');
-    console.log(user);
+    div.classList.add('user');
 
     for (const userKey in user) {
 
         if (userKey === 'address') {
             div.innerHTML += `<h2>${userKey}:</h2>`
-            console.log(user[userKey]);
 
             for (const itemAddress in user[userKey]) {
 
@@ -75,6 +76,6 @@ fetch(apiURL + id).then(value => value.json()).then(user => {
         }
     }
 
-    document.body.appendChild(div);
+    document.body.append(div, button);
 
 })

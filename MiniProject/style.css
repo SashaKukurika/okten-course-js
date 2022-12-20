@@ -1,13 +1,13 @@
 /*index.html - всі блоки з user - по 2 в рядок. кнопки/посилання розташувати під інформацією про user.*/
 body {
-   display: flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
 div {
-    height: 300px;
+    height: 150px;
     width: 49%;
-    background: green;
+    background: #dce7f5;
     border-radius: 10px;
     border: 2px solid black;
     box-sizing: border-box;
@@ -16,12 +16,16 @@ div {
     flex-direction: column;
     text-align: center;
     justify-items: center;
+    align-items: center;
 
 }
+
 button {
-    width: 60%;
-    height: 100px;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
 }
+
 a {
     text-decoration: none;
 }
