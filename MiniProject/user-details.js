@@ -43,6 +43,7 @@ fetch(apiURL + id).then(value => value.json()).then(user => {
             document.body.appendChild(div);
 
         })
+        button.disabled = 'true';
     }
 
     let div = document.createElement('div');
