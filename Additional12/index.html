@@ -1,13 +1,45 @@
 <!doctype html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .mainDiv {
+            display: flex;
+            flex-direction: column;
+            width: 210px;
+        }
+    </style>
 </head>
 <body>
+
+<div class="mainDiv">
+    <form>
+        <label>
+            Product name:
+            <input class="name" type="text">
+        </label>
+        <label>
+            Quantity:
+            <input class="numberOfProduct" type="number">
+        </label>
+        <label>
+            Price:
+            <input class="price" type="number">
+        </label>
+        <label>
+            Picture (link):
+            <input class="logo" type="url">
+        </label>
+    </form>
+</div>
+<br>
+<button class="btn">Add to basket</button>
+<br>
+<a href='list.html'> На сторінку товарів</a>
 
 <script src="main.js"></script>
 </body>

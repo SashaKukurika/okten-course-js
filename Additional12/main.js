@@ -19,7 +19,7 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).
         btn.onclick = function () {
 
             ++numOfClick;
-            if (numOfClick % 2 !== 0) {
+            if (numOfClick === 1) {
                 let id = user.id;
                 fetch('https://jsonplaceholder.typicode.com/users/' + id + '/posts').then(value => value.json())
                     .then(posts => {
@@ -28,23 +28,26 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).
                             div.appendChild(divPost);
                             for (const postKey in post) {
                                 divPost.innerHTML += `<h3>${postKey}: ${post[postKey]}</h3>`;
+
                             }
 
                             let btn2 = document.createElement('button');
                             divPost.appendChild(btn2);
-                            btn2.innerText = `Comments`;
+                            btn2.innerText = `Comments ${post.id}`;
+                            btn2.id = post.id;
                             let divComments = document.createElement('div');
                             divPost.appendChild(divComments);
 
-                            // як отримувати з батонна айді поста на якому клікнули щоб передати далі в фетч
+                            // як отримувати з батонна по якому клікнули його айді щоб передати далі в фетч??
 
                             let numOfClick = 0;
-                            btn2.onclick = function () {
+                            btn2.onclick = function (e) {
 
+                                let postId = e.target.id
                                 ++numOfClick;
-                                if (numOfClick % 2 !== 0) {
-                                    let id = post.id;
-                                    fetch('https://jsonplaceholder.typicode.com/posts/' + id + '/comments').then(value => value.json())
+
+                                if (numOfClick === 1) {
+                                    fetch('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments').then(value => value.json())
                                         .then(comments => {
                                             for (const comment of comments) {
 
@@ -56,6 +59,8 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).
                                         })
                                 } else if (numOfClick % 2 === 0) {
                                     divComments.style.display = 'none';
+                                } else {
+                                    divComments.style.display = 'block';
                                 }
                             }
 
@@ -64,6 +69,8 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).
                     })
             } else if (numOfClick % 2 === 0) {
                 divPost.style.display = 'none';
+            } else {
+                divPost.style.display = 'block';
             }
         }
 
@@ -73,7 +80,7 @@ fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json()).
     }
 })
 
-// 1.
+// 2.
 // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
 // https://jsonplaceholder.typicode.com/posts
 //     зробити кнопку до кожного поста. при кліку на яку виводяться в окремий блок всі коментарі поточного поста
@@ -93,7 +100,7 @@ fetch('https://jsonplaceholder.typicode.com/posts').then(value => value.json()).
         btn.onclick = function () {
 
             ++numOfClick;
-            if (numOfClick % 2 !== 0) {
+            if (numOfClick === 1) {
                 let id = post.id;
                 fetch('https://jsonplaceholder.typicode.com/posts/' + id + '/comments').then(value => value.json())
                     .then(comments => {
@@ -107,6 +114,8 @@ fetch('https://jsonplaceholder.typicode.com/posts').then(value => value.json()).
                     })
             } else if (numOfClick % 2 === 0) {
                 div2.style.display = 'none';
+            } else {
+                div2.style.display = 'block';
             }
         }
     }
@@ -120,6 +129,19 @@ fetch('https://jsonplaceholder.typicode.com/posts').then(value => value.json()).
 // - ціна товару
 // - картинка товару (посилання з інтернету)
 // Зберігати товари в масив в локалсорадж. При збережені товару з форми, action не повинно відбуватись (preventDefault)
-// створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
-// На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
-// До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+// створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на
+// сторінці всі товари.
+
+let arrOfProducts = [];
+localStorage.setItem('basket', JSON.stringify(arrOfProducts));
+
+document.querySelector('.btn').onclick = function () {
+    let product = {
+        name: document.querySelector('.name').value,
+        quantity: document.querySelector('.numberOfProduct').value,
+        price: document.querySelector('.price').value,
+        image: document.querySelector('.logo').value
+    }
+    arrOfProducts.push(product);
+    localStorage.setItem('basket', JSON.stringify(arrOfProducts));
+}
